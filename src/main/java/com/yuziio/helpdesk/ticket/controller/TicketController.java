@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController /* Permite a classe responder a requisições HTTP */
 @RequestMapping("/tickets") /* Define uma rota */
-@CrossOrigin(origins = "https://help-desk-para-chamados-ti.vercel.app/")  /* Permite qualquer frontend se conectar com esse backend */ /** MUDAR QUANDO HOSPEDAR O BACKEND*/
+@CrossOrigin(origins = "*")  /* Permite qualquer frontend se conectar com esse backend */ /** MUDAR QUANDO HOSPEDAR O BACKEND*/
 
 public class TicketController {
 
@@ -39,4 +39,5 @@ public class TicketController {
     }
 
 }
+
 
