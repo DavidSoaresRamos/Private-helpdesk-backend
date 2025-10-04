@@ -17,16 +17,6 @@ public class Ticket {
     private String problem;
 
 
-    private  Status status status.ABERTO
-
-    private LocalDateTime created.At = LocalDateTime.now();
-
-    public enum Status {
-        ABERTO,
-        EM_ANDAMENTO,
-        FECHADO
-    }
-
     /* Getters e Setters responsaveis por acessar os atributos principais ou altera-los */
 
     public String getName() {
@@ -60,8 +50,6 @@ public class Ticket {
         this.id = id;
     }
         
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
     
 }
 
