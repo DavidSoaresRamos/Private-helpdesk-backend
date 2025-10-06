@@ -1,7 +1,10 @@
 package com.yuziio.helpdesk.ticket.model;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 @Document(collection = "tabela") /*  @document diz que essa classe sera armazenada como um documento do MongoDB e ao lado o nome da coleção */
 public class Ticket {
@@ -15,6 +18,17 @@ public class Ticket {
     private String name;
     private String sector;
     private String problem;
+
+    @CreatedDate
+    private Date created = new Date();
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
 
     /* Getters e Setters responsaveis por acessar os atributos principais ou altera-los */

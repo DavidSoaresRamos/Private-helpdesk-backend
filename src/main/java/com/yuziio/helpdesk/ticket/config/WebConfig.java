@@ -12,7 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**") // aplica em todos os endpoints
                 .allowedOrigins(
                         "https://help-desk-para-chamados-ti.vercel.app",
-                        "https://dashboard-helpdesk.vercel.app"
+                        "https://dashboard-helpdesk.vercel.app",
+                        "http://localhost:4200"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
