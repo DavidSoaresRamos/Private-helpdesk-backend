@@ -26,6 +26,18 @@ public class TicketController {
         return (List<Ticket>) ticketRepository.findAll();
     }
 
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTicket(@PathVariable String id) {
+        try {
+            ticketRepository.deleteById(id);
+            return ResponseEntity.ok("Ticket deletado com sucesso!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Erro ao deletar ticket: " + e.getMessage());
+        }
+    }
+    
     @PostMapping
     public ResponseEntity<String> createTicket(@RequestBody Ticket ticket) { /* Converte o JSON para um objeto Ticket */
         try {
