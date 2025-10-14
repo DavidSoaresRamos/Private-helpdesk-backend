@@ -1,5 +1,6 @@
 package com.yuziio.helpdesk.ticket.model;
 
+import com.yuziio.helpdesk.ticket.enums.TicketStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,6 +22,12 @@ public class Ticket {
 
     @CreatedDate
     private Date created = new Date();
+
+    private TicketStatus status;
+
+    public TicketStatus getStatus() {
+        return status;
+    }
 
     public Date getCreated() {
         return created;
@@ -63,7 +70,9 @@ public class Ticket {
     public void setId(String id) {
         this.id = id;
     }
-        
-    
+
+
+    public void setStatus(TicketStatus status) {
+    }
 }
 

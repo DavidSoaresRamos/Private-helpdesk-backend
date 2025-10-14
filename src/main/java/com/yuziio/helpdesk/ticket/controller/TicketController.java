@@ -1,5 +1,6 @@
 package com.yuziio.helpdesk.ticket.controller;
 
+import com.yuziio.helpdesk.ticket.enums.TicketStatus;
 import com.yuziio.helpdesk.ticket.model.Ticket;
 import com.yuziio.helpdesk.ticket.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 
 @RestController /* Permite a classe responder a requisições HTTP */
@@ -25,7 +27,6 @@ public class TicketController {
     public List<Ticket> getTickets() {
         return (List<Ticket>) ticketRepository.findAll();
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteTicket(@PathVariable String id) {
@@ -50,6 +51,24 @@ public class TicketController {
 
         }
     }
+
+
+
+    @PutMapping("/{id}/status")
+    public ResponseEntity<Ticket> updateStatus(@PathVariable String id, @RequestBody Map<String, String> body) {
+        String statusStr = body.get("status");
+        TicketStatus status = TicketStatus.valueOf(statusStr);
+
+        Ticket ticket = ticketRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ticket não encontrado"));
+
+        ticket.setStatus(status);
+        ticketRepository.save(ticket);
+
+        return ResponseEntity.ok(ticket);
+    }
+
+
 
 }
 
