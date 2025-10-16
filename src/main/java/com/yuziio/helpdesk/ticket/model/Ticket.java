@@ -23,7 +23,7 @@ public class Ticket {
     @CreatedDate
     private Date created = new Date();
 
-    private TicketStatus status;
+    private TicketStatus status = TicketStatus.ABERTO;
 
     public TicketStatus getStatus() {
         return status;
