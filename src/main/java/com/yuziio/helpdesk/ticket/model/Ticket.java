@@ -23,7 +23,9 @@ public class Ticket {
     @CreatedDate
     private Date created = new Date();
 
-    private TicketStatus status = TicketStatus.ABERTO;
+    private TicketStatus status = TicketStatus. ABERTO;
+
+    /* Getters e Setters responsaveis por acessar os atributos principais ou altera-los */
 
     public TicketStatus getStatus() {
         return status;
@@ -38,7 +40,6 @@ public class Ticket {
     }
 
 
-    /* Getters e Setters responsaveis por acessar os atributos principais ou altera-los */
 
     public String getName() {
         return name;
