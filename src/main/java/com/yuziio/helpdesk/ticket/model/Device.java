@@ -10,8 +10,7 @@ public class Device {
     private String name;
 
     private int deviceNumber;
-
-    @Id
+    
     private String snid;
 
     private String model;
