@@ -72,8 +72,9 @@ public class Ticket {
         this.id = id;
     }
 
-
     public void setStatus(TicketStatus status) {
+        this.status = status;
     }
 }
+
 
