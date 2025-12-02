@@ -1,5 +1,4 @@
 package com.yuziio.helpdesk.ticket.controller;
-
 import com.yuziio.helpdesk.ticket.model.Device;
 import com.yuziio.helpdesk.ticket.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;

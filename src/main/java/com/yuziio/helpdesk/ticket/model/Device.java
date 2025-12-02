@@ -1,6 +1,4 @@
 package com.yuziio.helpdesk.ticket.model;
-
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -8,13 +6,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Device {
 
     private String name;
-
     private int deviceNumber;
-    
     private String snid;
-
     private String model;
-
     private int chargerNumber;
 
     public String getSnid() {
