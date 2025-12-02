@@ -9,6 +9,7 @@ public class SIMCard {
     private String name;
     private int ddd;
     private int number;
+    private String observation;
 
 
     public String getName() {
@@ -35,4 +36,11 @@ public class SIMCard {
         this.number = number;
     }
 
+    public String getObservation() {
+        return observation;
+    }
+
+    public void setObservation(String observation) {
+        this.observation = observation;
+    }
 }
