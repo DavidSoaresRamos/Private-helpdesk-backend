@@ -13,7 +13,7 @@ public class KeepAliveService {
     @Value("${server.port:8080}")
     private int port;
 
-    @Scheduled(fixedRate = 600000) // 10 minutes in milliseconds (10 * 60 * 1000)
+    @Scheduled(fixedRate = 300000) 
     public void keepAlive() {
         try {
             String url = "http://localhost:" + port + "/actuator/health";
